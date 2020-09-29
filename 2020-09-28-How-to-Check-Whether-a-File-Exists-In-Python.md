@@ -32,4 +32,11 @@ a_path.exists() # returns True if the path actually exists
 
 Note, if you plan to `if a_path.exists():` and then `open('path/to/file')`, consider to use `try except` approach. The reason is that file might be deleted between the calls.
 
+```python
+try:
+    f = open('path/to/file')
+except FileNotFoundError as e:
+    # Handle exception here
+    pass
+```
 
